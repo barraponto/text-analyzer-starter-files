@@ -13,23 +13,20 @@ $(document).ready(function(){
         var toAnalyzeText = $('#typedInText').val();
         var sentenceArr = toAnalyzeText.split('\n'); //splitted in array by sentence
         var textArr = toAnalyzeText.replace('\n',' ').split(' '); //splitted in array by words
-        numberWords = textArr.length; //
+        numberWords = textArr.length;
+        
         for (var a = 0; a < numberWords ; a++) {
             countLength += textArr[a].length;
         }
         
         for (var b = 0; b < sentenceArr.length; b++ ) {
             sentenceLength += sentenceArr[b].length;
-            //alert(sentenceLength);
         }
         
         
         avSenLen = sentenceLength / sentenceArr.length;
-        //alert(avSenLen);
         averageLength = countLength / numberWords;
-        //alert(uniqueWords);
         uniqueWords = jQuery.unique(textArr).length;
-        //alert(uniqueWords);
         $('#words').text(numberWords);
         $('#uniquewords').text(uniqueWords);
         $('#averagewordlength').text(averageLength);
